@@ -14,14 +14,33 @@ class Stack:
 
     def pop(self):
         """Removes and returns the last item for the list, 
-        which is also the top item of the Stack """
-        return self.items.pop()
+        which is also the top item of the Stack 
+
+        The runtime here is constant time, because all it does is return the item on
+        the list"""
+        if self.items:
+            return self.items.pop()
+
+        return None
 
     def peek(self):
-        pass
+        """Returns the last item in the list, which is also the item at the top
+        of the Stack
+
+        This method runs in constant time because indexing into a list is done in constant time"""
+
+        if self.items:
+            return self.items[-1]
+        return None
 
     def size(self):
-        pass
+        """Returns the length of the string that is representing the Stack.
+
+        This method runs in constant time because finding the length of the list also happens in constant time"""
+        return len(self.items)
 
     def is_empty(self):
-        pass
+        """Returns a Boolean value describing whether or not the Stack is empty.
+
+        This method runs in constant time because finding the length of the list also happens in constant time"""
+        return self.items == []
